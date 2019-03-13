@@ -1,11 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/google-signin-test/fonts/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <meta charset="utf-8">
+     <!-- replace "/>" with ">"
+     the path should be like that coz "./" for current location
+    no need to define type and charset in html5 -->
     <style>
-      a:link {
-        font-family=
-      }
+    body {
+      font-family: "shag";
+    }
+    /* you need to use it after importing the font */
+    a:link {
+      font-family: "shag"; /* remember use ":" in css */
+    }
+    /* remember to close it (style) */
+    </style>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="768333142846-0ljslngcee7lkrkpd4h7f6el9nf1bob1.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -13,7 +23,13 @@
   <body>
     <div>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+    <div id="stat">
+      Status Area.
+    </div>
     <script>
+    // you can put all the script together
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -23,32 +39,27 @@
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+
+        // I think you copy from https://developers.google.com/identity/sign-in/web/, here is how to use 1 line for console.log with template strings
+          // var profile = googleUser.getBasicProfile();
+          // console.log(`ID: ${profile.getId()}\nFull Name: ${profile.getName()}\nGiven Name: ${profile.getGivenName()}\nFamily Name: ${profile.getFamilyName()}\nImage URL: ${profile.getImageUrl()}\nEmail: ${profile.getEmail()}\nID Token: ${googleUser.getAuthResponse().id_token}`);
       }
-    </script>
-    <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
-      <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
       function logoutStat() {
         document.getElementById("stat").innerHTML = "User logged out";
       }
-      function loginStat( {
+      function loginStat() {
         document.getElementById("demo").innerHTML = "User logged in \n Username:" + profile.getName() + "\n NOT DONE YET";
       }
-    </div>
-      <div id=stat">
-        Status Area.
-      </div>
+    </script>
   </body>
 </html>
 Build 05
