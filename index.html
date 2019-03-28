@@ -1,3 +1,7 @@
+<!--https://youtu.be/VvpWQkbyW2A-->
+<!--https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet-->
+<!--YES. we ain't like article 13. The upcoming article 17 is EVEN WORSE.-->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +17,9 @@
   </head>
   <body>
     <div>
+      <div id='dataqqq'>
+        Data. Please <b>DO NOT</b>use internet explorer.
+      </div>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script>
       function onSignIn(googleUser) {
@@ -28,6 +35,16 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+        function storeData(id){
+          document.getElementById('dataqqq').innerHTML="ID:" + profile.getId() + '\nFull Name: ' + profile.getName() + '\nGiven Name: ' + profile.getGivenName() + '\nFamily Name: ' + profile.getFamilyName() + "\nImage URL: " + profile.getImageUrl()+"\nEmail: " + profile.getEmail()
+            // now working
+            
+            
+            
+                        
+            
+
+        }
       }
     </script>
     <a href="#" onclick="signOut();">Sign out</a>
@@ -46,10 +63,11 @@
       function loginStat( {
         document.getElementById("demo").innerHTML = "User logged in \n Username:" + profile.getName() + "\n NOT DONE YET";
       }
+      </script>
     </div>
       <div id=stat">
         Status Area.
       </div>
   </body>
 </html>
-Build 05
+Build 06
