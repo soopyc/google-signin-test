@@ -41,10 +41,10 @@
     <a href="#" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
+    document.getElementById("dataqqq").innerHTML = "User logged out";
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
-      document.getElementById("stat").innerHTML = "User logged out";
     });
   }
 </script>
