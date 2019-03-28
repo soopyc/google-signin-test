@@ -35,16 +35,7 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-        function storeData(id){
-          document.getElementById('dataqqq').innerHTML="ID:" + profile.getId() + '\nFull Name: ' + profile.getName() + '\nGiven Name: ' + profile.getGivenName() + '\nFamily Name: ' + profile.getFamilyName() + "\nImage URL: " + profile.getImageUrl()+"\nEmail: " + profile.getEmail()
-            // now working
-            
-            
-            
-                        
-            
-
-        }
+        document.getElementById('dataqqq').innerHTML="ID:" + profile.getId() + '\nFull Name: ' + profile.getName() + '\nGiven Name: ' + profile.getGivenName() + '\nFamily Name: ' + profile.getFamilyName() + "\nImage URL: " + profile.getImageUrl()+"\nEmail: " + profile.getEmail()+"\nID Token: " + id_token;
       }
     </script>
     <a href="#" onclick="signOut();">Sign out</a>
@@ -53,16 +44,12 @@
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
+      document.getElementById("stat").innerHTML = "User logged out";
     });
   }
 </script>
       <script>
-      function logoutStat() {
-        document.getElementById("stat").innerHTML = "User logged out";
-      }
-      function loginStat( {
-        document.getElementById("demo").innerHTML = "User logged in \n Username:" + profile.getName() + "\n NOT DONE YET";
-      }
+        //erm
       </script>
     </div>
       <div id=stat">
