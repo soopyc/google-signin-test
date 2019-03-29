@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div id='dataqqq'>
-	      <p><b>User is <span id="stat">er... [Status loading<span class="spinner-border spinner-border-sm"></span>]</span></b></p>
+	      <p><b>User is <span id="stat">[Status loading<span class="spinner-border spinner-border-sm"></span>]</span></b></p>
         <p id="id">
           ID placeholder
         </p>
@@ -127,7 +127,32 @@
           </div>
         </body>
 </html>
-Build 25
-#AllHailRobocopyright
-&nbsp;
-#We are not robots.
+<div class="container">
+	Build 26
+	<p>
+		#AllHailRobocopyright
+	</p>
+	<p>
+		#We are not robots.
+	</p>
+	<label id="minutes">00</label>:<label id="seconds">00</label>
+	<script>
+		var minutesLabel = document.getElementById("minutes");
+		var secondsLabel = document.getElementById("seconds");
+		var totalSeconds = 0;
+		setInterval(setTime, 1000);
+		function setTime() {
+			++totalSeconds;
+			secondsLabel.innerHTML = pad(totalSeconds % 60);
+			minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+		}
+		function pad(val) {
+			var valString = val + "";
+			if (valString.length < 2) {
+				return "0" + valString;
+			} else {
+				return valString;
+			}
+		}
+	</script>
+</div>
