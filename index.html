@@ -18,6 +18,27 @@
     <div>
       <div id='dataqqq'>
         Data. Please <b>DO NOT</b>use internet explorer.
+        <p id="id">
+          ID placeholder
+        </p>
+        <p id="fullname">
+          Full Name Place Holder
+        </p>
+        <p id="givenname">
+          GIVEN name placeholder
+        </p>
+        <p id="familyname">
+          FAMILY name placeholder
+        </p>
+        <p id="imageurl">
+          IMAGE profile pic placeholder
+        </p>
+        <p id="email">
+          EMAIL address placeholder
+        </p>
+        <p id="idtoken">
+          ID TOKEN placeholder
+        </p>
       </div>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script>
@@ -34,7 +55,13 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-        document.getElementById('dataqqq').innerHTML="ID:" + profile.getId() + '\nFull Name: ' + profile.getName() + '\nGiven Name: ' + profile.getGivenName() + '\nFamily Name: ' + profile.getFamilyName() + "\nImage URL: " + profile.getImageUrl()+"\nEmail: " + profile.getEmail()+"\nID Token: " + id_token;
+        document.getElementById('id').innerHTML="ID:" + profile.getId()
+        document.getElementById('fullname').innerHTML='Full Name: ' + profile.getName()
+        document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName()
+        document.getElementById('familyname').innerHTML='Family Name: ' + profile.getFamilyName()
+        document.getElementById('imageurl').innerHTML='Image URL: ' + profile.getImageUrl()
+        document.getElementById('email').innerHTML="Email: " + profile.getEmail()
+        document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
     <a href="#" onclick="signOut();">Sign out</a>
