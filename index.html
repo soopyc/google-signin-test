@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div id='dataqqq'>
-	      <p><b>User is<span id="stat">er...</span></b></p>
+	      <p><b>User is <span id="stat">er...</span></b></p>
         <p id="id">
           ID placeholder
         </p>
@@ -57,7 +57,7 @@
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
         console.log("ID Token: " + id_token);
-        document.getElementById('stat').innerHTML="IN";
+        document.getElementById('stat').innerHTML="logged in";
         document.getElementById('id').innerHTML="ID:" + profile.getId();
         document.getElementById('fullname').innerHTML='Full Name: ' + profile.getName();
         document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName();
@@ -76,7 +76,7 @@
 	    </p>
 	    <script>
 		    function signOut() {
-			    document.getElementById('stat').innerHTML="OUT"
+			    document.getElementById('stat').innerHTML="logged out"
 			    document.getElementById('fullname').innerHTML=''
 			    document.getElementById('givenname').innerHTML=''
 			    document.getElementById('familyname').innerHTML=''
