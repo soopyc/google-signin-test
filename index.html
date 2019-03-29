@@ -56,15 +56,15 @@
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
         console.log("ID Token: " + id_token);
-        document.getElementById('stat').innerHTML="IN"
-        document.getElementById('id').innerHTML="ID:" + profile.getId()
-        document.getElementById('fullname').innerHTML='Full Name: ' + profile.getName()
-        document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName()
-        document.getElementById('familyname').innerHTML='Family Name: ' + profile.getFamilyName()
-        document.getElementById('imageurl').innerHTML='Image URL: ' + profile.getImageUrl()
-	const pfpURL = profile.getImageURL()
-	document.getElementById('previewPFP').innerHTML="<img src="+pfpURL+"alt='Your profile picture.'>"
-        document.getElementById('email').innerHTML="Email: " + profile.getEmail()
+        document.getElementById('stat').innerHTML="IN";
+        document.getElementById('id').innerHTML="ID:" + profile.getId();
+        document.getElementById('fullname').innerHTML='Full Name: ' + profile.getName();
+        document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName();
+        document.getElementById('familyname').innerHTML='Family Name: ' + profile.getFamilyName();
+        document.getElementById('imageurl').innerHTML='Image URL: ' + profile.getImageUrl();
+	const pfpURL = profile.getImageURL();
+	document.getElementById('previewPFP').innerHTML="<img src="+pfpURL+"alt='Your profile picture.'>";
+        document.getElementById('email').innerHTML="Email: " + profile.getEmail();
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
@@ -124,4 +124,4 @@
       </div>
   </body>
 </html>
-Build 10
+Build 11
