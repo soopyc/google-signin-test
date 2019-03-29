@@ -47,7 +47,7 @@
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
-	      $("#signoutbutton").attr("disabled", true);
+	      $('#signoutbutton').removeAttr("disabled");
         var profile = googleUser.getBasicProfile();
 	var id_token = googleUser.getAuthResponse().id_token; // The ID token you need to pass to your backend:
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -69,7 +69,7 @@
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
-	<button id="signoutbutton" type="button" class="btn btn-link" onClick="signOut();">
+	<button id="signoutbutton" type="button" class="btn btn-warning" onClick="signOut();">
                 Sign Out
 	</button>
 	<script>
@@ -81,7 +81,7 @@
 			document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
 			document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
 			document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
-			$('#signoutbutton').removeAttr("disabled");
+			$("#signoutbutton").attr("disabled", true);
                         var auth2 = gapi.auth2.getAuthInstance();
                         
                         auth2.signOut().then(function () {
@@ -124,7 +124,7 @@
           </div>
         </body>
 </html>
-Build 13
+Build 14
 #AllHailRobocopyright
 &nbsp;
 #We are not robots.
