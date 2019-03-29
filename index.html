@@ -87,7 +87,26 @@
       </p>
       <script>
         //@version filereader
-        
+        // Check for the various File API support.
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+          //The filereading program.
+          function readSingleFile(evt) {
+            //Retrieve the first (and only!) File from the FileList object
+            var f = evt.target.files[0]; 
+            if (f) {
+              var r = new FileReader();
+              r.onload = function(e) { 
+                var contents = e.target.result;
+                alert(contents.substr(1, contents.indexOf("n")));  
+              }
+              r.readAsText(f);
+    } else { 
+      alert("Failed to load file");
+    }
+          }
+        } else {
+          document.getElementById('version').innerHTML="FileReader not upported. Version Number Control halted."
+        }
         
         
         
