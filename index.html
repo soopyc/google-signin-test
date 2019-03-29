@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div id='dataqqq'>
-	      <p><b>USER LOGGED <span id="stat">OUT OR IN</span></b></p>
+	      <p><b>User is<span id="stat">er...</span></b></p>
         <p id="id">
           ID placeholder
         </p>
@@ -69,27 +69,30 @@
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
-	<button id="signoutbutton" type="button" class="btn btn-warning" onClick="signOut();">
-                Sign Out
-	</button>
-	<script>
-                function signOut() {
-		        document.getElementById('stat').innerHTML="OUT"
-		        document.getElementById('fullname').innerHTML='Full Name: ' + "LOGGED OUT"
-		        document.getElementById('givenname').innerHTML='Given Name: ' + "LOGGED OUT"
-			document.getElementById('familyname').innerHTML='Family Name: ' + "LOGGED OUT"
-			document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
-			document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
-			document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
-			$("#signoutbutton").attr("disabled", true);
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        
-                        auth2.signOut().then(function () {
-                                console.log('User signed out.');
-                        });
-                }
-            </script>
-            <p>
+	    <p>
+		    <button id="signoutbutton" type="button" class="btn btn-warning" onClick="signOut();">
+			    Sign Out
+		    </button>
+	    </p>
+	    <script>
+		    function signOut() {
+			    document.getElementById('stat').innerHTML="OUT"
+			    document.getElementById('fullname').innerHTML=''
+			    document.getElementById('givenname').innerHTML=''
+			    document.getElementById('familyname').innerHTML=''
+			    document.getElementById('imageurl').innerHTML=''
+			    document.getElementById('previewPFP').innerhtml='<img src="/defaultYourStupidSkin.jpg" alt="The Default Profile Picture if you have not logged in">'
+			    document.getElementById('email').innerHTML=""
+			    document.getElementById('idtoken').innerHTML=""
+			    $("#signoutbutton").attr("disabled", true);
+			    
+			    var auth2 = gapi.auth2.getAuthInstance();
+			    auth2.signOut().then(function () {
+				    console.log('User signed out.');
+			    });
+		    }
+	    </script>
+	    <p>
                     Version: <span id="version">#</span>
             </p>
             <script>
@@ -124,7 +127,7 @@
           </div>
         </body>
 </html>
-Build 14
+Build 15
 #AllHailRobocopyright
 &nbsp;
 #We are not robots.
