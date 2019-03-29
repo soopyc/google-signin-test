@@ -68,17 +68,16 @@
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
-    <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    document.getElementById('stat').innerHTML="OUT"
-    document.getElementById('id').innerHTML="ID:" + "LOGGED OUT"
-    document.getElementById('fullname').innerHTML='Full Name: ' + "LOGGED OUT"
-    document.getElementById('givenname').innerHTML='Given Name: ' + "LOGGED OUT"
-    document.getElementById('familyname').innerHTML='Family Name: ' + "LOGGED OUT"
-    document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
-    document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
-    document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
+	    <button id="signoutbutton" type="button" class="btn btn-link" onClick="signOut();">Sign Out</button>
+	    <script>
+		    function signOut() {
+			    document.getElementById('stat').innerHTML="OUT"
+			    document.getElementById('fullname').innerHTML='Full Name: ' + "LOGGED OUT"
+			    document.getElementById('givenname').innerHTML='Given Name: ' + "LOGGED OUT"
+			    document.getElementById('familyname').innerHTML='Family Name: ' + "LOGGED OUT"
+			    document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
+			    document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
+			    document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
@@ -124,4 +123,6 @@
       </div>
   </body>
 </html>
-Build 11
+Build 12
+#AllHailRobocopyright
+#We are not robots.
