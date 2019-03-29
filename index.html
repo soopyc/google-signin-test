@@ -32,7 +32,10 @@
         </p>
         <p id="imageurl">
           IMAGE profile pic placeholder
-        </p>
+				</p>
+				<p id="imagep">
+					IMAGE Preview<span id="previewPFP">Placeholder</span>
+				</p>
         <p id="email">
           EMAIL address placeholder
         </p>
@@ -61,6 +64,7 @@
         document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName()
         document.getElementById('familyname').innerHTML='Family Name: ' + profile.getFamilyName()
         document.getElementById('imageurl').innerHTML='Image URL: ' + profile.getImageUrl()
+				document.getElementById('previewPFP').innerHTML="<img src="profile.getImageURL()+"alt='Your profile picture.'>"
         document.getElementById('email').innerHTML="Email: " + profile.getEmail()
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
@@ -100,9 +104,9 @@
                 alert(contents.substr(1, contents.indexOf("n")));  
               }
               r.readAsText(f);
-    } else { 
-      alert("Failed to load file");
-    }
+            } else { 
+              alert("Failed to load file");
+            }
           }
         } else {
           document.getElementById('version').innerHTML="FileReader not upported. Version Number Control halted."
