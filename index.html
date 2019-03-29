@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div id='dataqqq'>
-        <p>USER LOGGED <span id="stat">OUT OR IN</span></p>
+	      <p><b>USER LOGGED <span id="stat">OUT OR IN</span></b></p>
         <p id="id">
           ID placeholder
         </p>
@@ -34,7 +34,7 @@
           IMAGE profile pic placeholder
 	</p>
 	<p id="imagep">
-	  IMAGE Preview:&nbsp;<span id="previewPFP">Placeholder</span>
+	  IMAGE Preview:&nbsp; <span id="previewPFP">Placeholder</span>
 	</p>
         <p id="email">
           EMAIL address placeholder
@@ -47,6 +47,7 @@
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
+	      $("#signoutbutton").attr("disabled", true);
         var profile = googleUser.getBasicProfile();
 	var id_token = googleUser.getAuthResponse().id_token; // The ID token you need to pass to your backend:
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -68,61 +69,62 @@
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
       }
     </script>
-	    <button id="signoutbutton" type="button" class="btn btn-link" onClick="signOut();">Sign Out</button>
-	    <script>
-		    function signOut() {
-			    document.getElementById('stat').innerHTML="OUT"
-			    document.getElementById('fullname').innerHTML='Full Name: ' + "LOGGED OUT"
-			    document.getElementById('givenname').innerHTML='Given Name: ' + "LOGGED OUT"
-			    document.getElementById('familyname').innerHTML='Family Name: ' + "LOGGED OUT"
-			    document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
-			    document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
-			    document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
-      <p>
-        Version: <span id="version">#</span>
-      </p>
-      <script>
-        //@version filereader
-        // Check for the various File API support.
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-          //The filereading program.
-          function readSingleFile(evt) {
-            //Retrieve the first (and only!) File from the FileList object
-            var f = evt.target.files[0]; 
-            if (f) {
-              var r = new FileReader();
-              r.onload = function(e) { 
-                var contents = e.target.result;
-                alert(contents.substr(1, contents.indexOf("n")));  
-              }
-              r.readAsText(f);
-            } else { 
-              alert("Failed to load file");
-            }
-          }
-        } else {
-          document.getElementById('version').innerHTML="FileReader not upported. Version Number Control halted."
-        }
-        
-        
-        
-        
-        
-        
+	<button id="signoutbutton" type="button" class="btn btn-link" onClick="signOut();">
+                Sign Out
+	</button>
+	<script>
+                function signOut() {
+		        document.getElementById('stat').innerHTML="OUT"
+		        document.getElementById('fullname').innerHTML='Full Name: ' + "LOGGED OUT"
+		        document.getElementById('givenname').innerHTML='Given Name: ' + "LOGGED OUT"
+			document.getElementById('familyname').innerHTML='Family Name: ' + "LOGGED OUT"
+			document.getElementById('imageurl').innerHTML='Image URL: ' + "LOGGED OUT"
+			document.getElementById('email').innerHTML="Email: " + "LOGGED OUT"
+			document.getElementById('idtoken').innerHTML="ID Token: " + "LOGGED OUT"
+			$('#signoutbutton').removeAttr("disabled");
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        
+                        auth2.signOut().then(function () {
+                                console.log('User signed out.');
+                        });
+                }
+            </script>
+            <p>
+                    Version: <span id="version">#</span>
+            </p>
+            <script>
+                    //@version filereader
+                    // Check for the various File API support.
+                    if (window.File && window.FileReader && window.FileList && window.Blob) {
+                            //The filereading program.
+                            function readSingleFile(evt) {
+                                    //Retrieve the first (and only!) File from the FileList object
+                                    var f = evt.target.files[0]; 
+                                    if (f) {
+                                            var r = new FileReader();
+                                            r.onload = function(e) { 
+                                                    var contents = e.target.result;
+                                                    alert(contents.substr(1, contents.indexOf("n")));  
+                                            }
+                                            r.readAsText(f);
+                                    } else { 
+                                            alert("Failed to load file");
+                                    }
+                            }
+                    } else {
+                            document.getElementById('version').innerHTML="FileReader not upported. Version Number Control halted."
+                    }
+                    
         //@end
-      </script>
-    </div>
-      <div id=stat">
-        Status Area.
-      </div>
-  </body>
+                    
+            </script>
+          </div>
+          <div id="stat">
+                  Status Area.
+          </div>
+        </body>
 </html>
 Build 12
 #AllHailRobocopyright
+&nbsp;
 #We are not robots.
