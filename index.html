@@ -18,7 +18,8 @@
     <div class="container">
       <div id='dataqqq'>
 	      <label id="minutes">00</label>:<label id="seconds">00</label>
-	      <p><h1>User is <span id="stat">[Status loading<span class="spinner-border spinner-border-sm"></span>]</span></h1></p>
+	      <p><h1>User is <span id="stat">erm...</span></h1></p>
+	      <p id="initialLoad"><b>[Status loading<span class="spinner-border spinner-border-sm"></span>]</b></p>
         <p id="id">
           ID placeholder
         </p>
@@ -68,6 +69,7 @@
 	document.getElementById('previewPFP').innerHTML="<img src="+pfpURL+"alt='Your profile picture.'>";
         document.getElementById('email').innerHTML="Email: " + profile.getEmail();
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
+	document.getElementById('initialLoad').innerHTML="";
       }
     </script>
 	    <p>
@@ -85,6 +87,7 @@
 			    document.getElementById('previewPFP').innerhtml='<img src="/defaultYourStupidSkin.jpg" alt="The Default Profile Picture if you have not logged in">'
 			    document.getElementById('email').innerHTML=""
 			    document.getElementById('idtoken').innerHTML=""
+			    document.getElementById('initialLoad').innerHTML=""
 			    $("#signoutbutton").attr("disabled", true);
 			    
 			    var auth2 = gapi.auth2.getAuthInstance();
