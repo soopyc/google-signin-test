@@ -181,6 +181,14 @@
                     
         //@end
                     
+		    
+		    //@Initial Plugin
+		    if (auth2.isSignedIn.get()) {
+			    var profile = auth2.currentUser.get().getBasicProfile();
+			    
+		    } else {
+			    signOut()
+		    }
             </script>
           </div>
           <div id="stat">
