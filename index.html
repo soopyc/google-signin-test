@@ -126,6 +126,8 @@
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
 	document.getElementById('initialLoad').innerHTML="";
 	sessionStorage.setItem('loginStatus','in');
+	$("#signoutbutton").text('Sign Out');
+	$('#signoutbutton').removeClass('btn-info').addClass('btn-warning');
       }
     </script>
 	    <p>
@@ -146,6 +148,9 @@
 			    document.getElementById('idtoken').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
+			    sessionStorage.clear();
+			    $("#signoutbutton").text('No sign out is required.......');
+			    $('#signoutbutton').removeClass('btn-warning').addClass('btn-info');
 			    $("#signoutbutton").attr("disabled", true);
 		    }
 	    </script>
@@ -155,6 +160,10 @@
             <script>
                     //@version filereader
                     // Check for the various File API support.
+		    
+		    //Not done yet.
+		    
+		    /*
                     if (window.File && window.FileReader && window.FileList && window.Blob) {
                             //The filereading program.
                             function readSingleFile(evt) {
@@ -174,13 +183,17 @@
                     } else {
                             document.getElementById('version').innerHTML="FileReader not upported. Version Number Control halted."
                     }
-                    
+                    */
         //@end
+		    
+		    
+		    
+		    
                     
 		    
 		    //@Initial Plugin
-		    if(sessionStorage.getItem('myUserEntity') == null){
-			    //Require signOut()
+		    if(sessionStorage.getItem('loginStatus') == null){
+			    //Require signOut() for user to login
 			    signOut()
 		    } else {
 			    //User already logged in
@@ -196,7 +209,7 @@
         </body>
 </html>
 <div id="idk">
-	Build 46
+	Build 50
 	<p>
 		Used 16 minutes lol
 		#AllHailRobocopyright
