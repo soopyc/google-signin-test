@@ -159,9 +159,9 @@
 			    $("#signoutbutton").attr("disabled", true);
 			    var auth2 = gapi.auth2.getAuthInstance();
 			    auth2.signOut().then(function () {
-				    console.log('User signed out, reloading iframe.');
+				    console.log('User signed out, reloading page.');
 			    });
-			    $("#SIB").load(window.location.href + "#SIB");
+			   location.reload();
 		    }
 	    </script>
 	    <p>
