@@ -101,7 +101,9 @@
           ID TOKEN placeholder
         </p>
       </div>
-	  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+	  <div id="SIB">
+		  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+	  </div>
     <script>	 					      
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -121,6 +123,7 @@
         document.getElementById('givenname').innerHTML='Given Name: ' + profile.getGivenName();
         document.getElementById('familyname').innerHTML='Family Name: ' + profile.getFamilyName();
         document.getElementById('imageurl').innerHTML='Image URL: ' + profile.getImageUrl();
+	docuemnt.getElementById('SIB').innerHTML=''
 	const pfpURL = profile.getImageUrl();
 	document.getElementById('previewPFP').innerHTML="<img src="+pfpURL+"alt='Your profile picture.'>";
         document.getElementById('email').innerHTML="Email: " + profile.getEmail();
@@ -149,6 +152,7 @@
 			    document.getElementById('idtoken').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
+			    document.getElementById('SIB').innerHTML='<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>'; //Give it a lil' bit of time to load......
 			    sessionStorage.clear();
 			    $("#signoutbutton").text('No sign out is required');
 			    $('#signoutbutton').removeClass('btn-warning').addClass('btn-info');
