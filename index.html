@@ -152,6 +152,9 @@
 			    $("#signoutbutton").text('No sign out is required.......');
 			    $('#signoutbutton').removeClass('btn-warning').addClass('btn-info');
 			    $("#signoutbutton").attr("disabled", true);
+			    auth2.signOut().then(function () {
+				    console.log('User signed out.');
+			    });
 		    }
 	    </script>
 	    <p>
@@ -209,7 +212,7 @@
         </body>
 </html>
 <div id="idk">
-	Build 50
+	Build 51
 	<p>
 		Used 16 minutes lol
 		#AllHailRobocopyright
