@@ -132,7 +132,7 @@
     </script>
 	    <p>
 		    <button id="signoutbutton" type="button" class="btn btn-warning" onClick="signOut();">
-			    Sign Out
+			    Loading <span class="spinner-border spinner-border-sm text-info" role="status"></span>
 		    </button>
 	    </p>
 	    <script>
@@ -149,7 +149,7 @@
 			    document.getElementById('initialLoad').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
 			    sessionStorage.clear();
-			    $("#signoutbutton").text('No sign out is required.......');
+			    $("#signoutbutton").text('No sign out is required');
 			    $('#signoutbutton').removeClass('btn-warning').addClass('btn-info');
 			    $("#signoutbutton").attr("disabled", true);
 			    var auth2 = gapi.auth2.getAuthInstance();
