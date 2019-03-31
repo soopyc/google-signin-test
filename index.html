@@ -101,9 +101,11 @@
           ID TOKEN placeholder
         </p>
       </div>
-	  <div id="SIB">
-		  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-	  </div>
+      <div class="container">
+	  <div class="row">
+		  <div id="SIB" class="col-sm">
+			  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+		  </div>
     <script>	 					      
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -135,9 +137,13 @@
       }
     </script>
 	    <p>
+		<div class="col-sm">
 		    <button id="signoutbutton" type="button" class="btn btn-warning" onClick="signOut();" disabled>
-			    Loading <span class="spinner-border spinner-border-sm text-info" role="status"></span>
+			Loading <span class="spinner-border spinner-border-sm text-info" role="status"></span>
 		    </button>
+		</div>
+	      </div>
+	  </div>
 	    </p>
 	    <script>
 		    function signOut() {
@@ -219,7 +225,7 @@
         </body>
 </html>
 <div id="idk">
-	Build 55
+	Build 60
 	<p>
 		 (if this works then OFFICIAL release 1.0)
 	</p>
