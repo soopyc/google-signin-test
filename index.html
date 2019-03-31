@@ -101,9 +101,7 @@
           ID TOKEN placeholder
         </p>
       </div>
-	  <div id="SIB">
-		  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-	  </div>
+	  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script>	 					      
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -128,7 +126,6 @@
         document.getElementById('email').innerHTML="Email: " + profile.getEmail();
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
 	document.getElementById('initialLoad').innerHTML="";
-	document.getElementById('SIB').innerHTML='';
 	sessionStorage.setItem('loginStatus','in');
 	$("#signoutbutton").text('Sign Out');
 	$('#signoutbutton').removeClass('btn-info').addClass('btn-warning');
@@ -152,7 +149,6 @@
 			    document.getElementById('idtoken').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
-			    document.getElementById('SIB').innerHTML='<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>'
 			    sessionStorage.clear();
 			    $("#signoutbutton").text('No sign out is required');
 			    $('#signoutbutton').removeClass('btn-warning').addClass('btn-info');
@@ -218,7 +214,7 @@
         </body>
 </html>
 <div id="idk">
-	Build 52
+	Build 53
 	<p>
 		#AllHailRobocopyright
 	</p>
