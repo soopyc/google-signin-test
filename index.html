@@ -101,8 +101,7 @@
         </p>
       </div>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>	 
-	    var auth2 = gapi.auth2.getAuthInstance();						      
+    <script>	 					      
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
 	$('#signoutbutton').removeAttr("disabled");
@@ -126,6 +125,7 @@
         document.getElementById('email').innerHTML="Email: " + profile.getEmail();
         document.getElementById('idtoken').innerHTML="ID Token: " + id_token;
 	document.getElementById('initialLoad').innerHTML="";
+	sessionStorage.setItem('loginStatus','in');
       }
     </script>
 	    <p>
@@ -147,11 +147,6 @@
 			    document.getElementById('initialLoad').innerHTML="";
 			    document.getElementById('initialLoad').innerHTML="";
 			    $("#signoutbutton").attr("disabled", true);
-			    
-			    var auth2 = gapi.auth2.getAuthInstance();
-			    auth2.signOut().then(function () {
-				    console.log('User signed out.');
-			    });
 		    }
 	    </script>
 	    <p>
@@ -184,12 +179,15 @@
                     
 		    
 		    //@Initial Plugin
-		    if (auth2.isSignedIn.get()) {
-			    var profile = auth2.currentUser.get().getBasicProfile();
-			    
-		    } else {
+		    if(sessionStorage.getItem('myUserEntity') == null){
+			    //Require signOut()
 			    signOut()
+		    } else {
+			    //User already logged in
+			    //Do nothing cuz it do its thing lol
 		    }
+		    
+		    
             </script>
           </div>
           <div id="stat">
@@ -198,7 +196,7 @@
         </body>
 </html>
 <div id="idk">
-	Build 35
+	Build 46
 	<p>
 		#AllHailRobocopyright
 	</p>
