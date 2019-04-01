@@ -106,7 +106,10 @@
 		  <div id="SIB" class="col-sm">
 			  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 		  </div>
-    <script>	 					      
+    <script>	
+	    function sleep(ms) {
+		    return new Promise(resolve => setTimeout(resolve, ms));
+	    }
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
 	$('#signoutbutton').removeAttr("disabled");
@@ -166,10 +169,15 @@
 			    
 			    var auth2 = gapi.auth2.getAuthInstance();
 			    auth2.signOut().then(function () {
-				    console.log('User signed out, reloading page.');
-				    setTimeout(location.reload(), 3000)
+				    refresh()
 			    });
-			   
+			   async function refresh() {
+				   console.log('User signed out, reloading page.');
+				   //await 2 sec
+				   await sleep(2000);
+				   //reload now.
+				   location.reload()
+			   }
 		    }
 	    </script>
 	    <p>
