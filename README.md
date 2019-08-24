@@ -1,2 +1,1 @@
-# google-signin-test
-Testing For GOOGLE SIGN IN
+Google social sign-in testing webpage :3
